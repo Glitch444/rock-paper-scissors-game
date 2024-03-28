@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK PAPER SCISSORS</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+
+
+        }    
+        .you {
+            display: flex;
+            justify-content: center;
+            justify-content: space-around;
+            align-items: center;
+            flex: 1;
+            border: solid 1px red
+         }
+
+         .computerOutput {
+            display: flex;
+
+            flex:1;
+            border: solid 1px red
+         }
+
+         button {
+            display: flex;
+         }
+
+    </style>
+     
+</head>
+
+<body>
+    <div class="you">
+        <button id="userRock">ROCK</button>
+        <button id="userPaper">PAPER</button>
+        <button id="userScissors">SCISSORS</button>
+    </div>
+
+    <p class="computerOutput"></p>
+
+
+   
+<script src="./script.js" defer></script> 
+</body>
+
+</html>
