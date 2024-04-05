@@ -1,23 +1,23 @@
+let displayResult = document.getElementById("displayResult");
+let displayComputerChoice = document.getElementById("displayComputerChoice");
+let displayPlayerChoice = document.getElementById("displayPlayerChoice");
 
-let displayResult = document.getElementById("displayResult")
-let displayComputerChoice = document.getElementById("displayComputerChoice")
-let displayPlayerChoice = document.getElementById("displayPlayerChoice")
-
-let playerScore = document.getElementById("playerScore")
-let computerScore = document.getElementById("computerScore")
-
+let playerScore = document.getElementById("playerScore");
+let computerScore = document.getElementById("computerScore");
+let ps = 0;
+let cs = 0;
 
 
 // begin game on click
-const playerButtons = document.querySelectorAll("#rock, #paper, #scissors")
-playerButtons.forEach(playerButtons => playerButtons.addEventListener("click", play))
+const playerButtons = document.querySelectorAll("#rock, #paper, #scissors");
+playerButtons.forEach(playerButtons => playerButtons.addEventListener("click", play));
 
 function play (e) {
     const playerChoice = e.target.id;
     let computerChoice = getComputerChoice();
     addPara(playerChoice, computerChoice); 
-
     getWinner(playerChoice, computerChoice);
+    
 }
 
 // display player and computer choices
@@ -33,16 +33,16 @@ function addPara (playerChoice, computerChoice) {
    const ComputerNode = document.createTextNode ("Computer chose: " + computerChoice);
    computerPara.appendChild(ComputerNode);
    const computerElement = document.getElementById("displayComputerChoice");
-   computerElement.appendChild(computerPara)
+   computerElement.appendChild(computerPara);
  };
 
 
 // Get computer's choice
 function getComputerChoice() {
-    const arrOfChoices = ["rock", "paper", "scissors"]
-    const randomNum = Math.floor(Math.random()*3)
-    let computerChoice = arrOfChoices[randomNum]
-    return computerChoice
+    const arrOfChoices = ["rock", "paper", "scissors"];
+    const randomNum = Math.floor(Math.random()*3);
+    let computerChoice = arrOfChoices[randomNum];
+    return computerChoice;
 }
 
 // Get game winner
@@ -54,58 +54,46 @@ function getWinner(playerChoice, computerChoice) {
     } else if (playerChoice === "scissors" && computerChoice === "scissors") {
         displayResult.textContent = "you tied! You both picked scissors."
 
-    }  else if (playerChoice === "rock" && computerChoice === "scissors") {
-        displayResult.textContent = "you win!"
-        playerScore.textContent += "🐵"
 
+    }  else if (playerChoice === "rock" && computerChoice === "scissors") {
+        displayResult.textContent = "you win!";
+        ps += 1;
+        playerScore.textContent = "🐵";
+       
     } else if (playerChoice === "rock" && computerChoice === "paper") {
         displayResult.textContent = "you loose!"
-        computerScore.textContent += "🤖"
+        cs += 1;
+        computerScore.textContent += "🤖";
             
     } else if (playerChoice === "paper" && computerChoice === "rock") {
         displayResult.textContent = "you win!"
-        playerScore.textContent += "🐵"
-            
+        ps += 1;
+        playerScore.textContent = "🐵";
+        
+
     } else if (playerChoice === "paper" && computerChoice === "scissors") {
         displayResult.textContent = "you lose!"
-        computerScore.textContent += "🤖"
+        cs += 1;
+        computerScore.textContent += "🤖";
     
     } else if (playerChoice === "scissors" && computerChoice === "paper") {
         displayResult.textContent = "you win!"
-        playerScore.textContent += "🐵"
-
+        ps += 1;
+        playerScore.textContent = "🐵";
+        
     } else if (playerChoice === "scissors" && computerChoice === "rock") {
         displayResult.textContent = "you lose!"
-        computerScore.textContent += "🤖"
+        cs += 1;
+        computerScore.textContent += "🤖";
     }
+
+    winningMessage ()
 }
 
-
-// create function that counts score and first one to get to 5 wins game
-// stop game after winner declared
-// button for restarting game  
-
-
-/*
-
-function game() {
-    for(let i = 0; i < 5; i++) {
-                
-        const computerSelection = computerPlay()
-
-        playRound (playerSelection, computerSelection)
+function winningMessage (){
+    if (ps === 3) {
+        alert("YOU WIN! Refresh page to have another go!")
+    } else if (cs === 3) {
+        alert ("YOU LOSE! Refresh page to have another go!")
     }
-
-    if (playerScore > compScore) {
-        return "You beat the computer!" 
-    } else if (playerScore < compScore) {
-        return " You got beat by the computer!"
-    } else {
-        return "you tied with the computer!"
-    }
-
 }
-
-console.log(game())
-
-*/
