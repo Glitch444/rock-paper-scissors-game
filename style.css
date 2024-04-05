@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+
+}  
+
+.playerButtons {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+    border: solid 1px red
+ }
+
+ .display {
+    display: flex;
+
+    flex:1;
+    border: solid 1px red
+
+ }
+ .scores {
+    display: flex;
+    flex: 1;
+ }
+
+ p {
+    width: 100px;
+    border: solid 1px red
+
+ }
+
+ button {
+    display: flex;
+ }

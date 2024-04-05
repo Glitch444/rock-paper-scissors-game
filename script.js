@@ -1,56 +1,81 @@
 
-let playerScore = 0
-let compScore = 0
+let displayResult = document.getElementById("displayResult")
+let displayComputerChoice = document.getElementById("displayComputerChoice")
+let displayPlayerChoice = document.getElementById("displayPlayerChoice")
 
-function computerPlay() {
+let playerScore = document.getElementById("playerScore")
+let computerScore = document.getElementById("computerScore")
+
+// Get computer's choice
+function getComputerChoice() {
     const arrOfChoices = ["rock", "paper", "scissors"]
     const randomNum = Math.floor(Math.random()*3)
-    const compChoice = arrOfChoices[randomNum]
-    return compChoice 
-    }
+    let computerChoice = arrOfChoices[randomNum]
+    displayComputerChoice.textContent = "Computer chose: " + computerChoice    
+    return computerChoice
+}
+
+// Show player's choice on click
+const playerButtons = document.querySelectorAll(".playerButtons")
+
+playerButtons.forEach(playerButtons => playerButtons.addEventListener("click", play))
+
+function play (e) {
+    const playerChoice = e.target.id;
+    displayPlayerChoice.textContent = "You chose: " + playerChoice;
+
+    let computerChoice = getComputerChoice();
+
+    getWinner(playerChoice, computerChoice);
+}
 
 
-function playRound (playerSelection, computerSelection) {
+// Get game winner
+function getWinner(playerChoice, computerChoice) {
 
-    console.log("1", playerSelection, "2", computerSelection)
+    console.log(playerChoice, computerChoice)
 
-        if (playerSelection === "rock" && computerSelection === "rock"){
-            return "you tied! You both picked rock."
-        } else if (playerSelection === "paper" && computerSelection === "paper") {
-            return "you tied! You both picked paper."
-        } else if (playerSelection === "scissors" && computerSelection === "scissors") {
-        return "you tied! You both picked scissors."
-        }  else if (playerSelection === "rock" && computerSelection === "scissors") {
-            playerScore++
-            return "you win!"
+         if (playerChoice === "rock" && computerChoice === "rock") {
+            displayResult.textContent = "you tied! You both picked rock."
 
-        } else if (playerSelection === "rock" && computerSelection === "paper") {
-            compScore++
-            return "you looe!"
+        } else if (playerChoice === "paper" && computerChoice === "paper") {
+
+            displayResult.textContent = "you tied! You both picked paper."
+
+        } else if (playerChoice === "scissors" && computerChoice === "scissors") {
+            displayResult.textContent = "you tied! You both picked scissors."
+
+        }  else if (playerChoice === "rock" && computerChoice === "scissors") {
+            displayResult.textContent = "you win!"
+
+        } else if (playerChoice === "rock" && computerChoice === "paper") {
+            displayResult.textContent = "you looe!"
             
-        } else if (playerSelection === "paper" && computerSelection === "rock") {
-            playerScore++
-            return "you win!"
+        } else if (playerChoice === "paper" && computerChoice === "rock") {
+           displayResult.textContent = "you win!"
             
-        } else if (playerSelection === "paper" && computerSelection === "scissors") {
-            compScore++
-            return "you lose!"
+        } else if (playerChoice === "paper" && computerChoice === "scissors") {
+            displayResult.textContent = "you lose!"
 
-        } else if (playerSelection === "scissors" && computerSelection === "paper") {
-            playerScore++
-            return "you win!"
-        } else if (playerSelection === "scissors" && computerSelection === "rock") {
-            compScore++
-            return "you lose!"
+        } else if (playerChoice === "scissors" && computerChoice === "paper") {
+            displayResult.textContent = "you win!"
+
+        } else if (playerChoice === "scissors" && computerChoice === "rock") {
+            displayResult.textContent = "you lose!"
     }
 }
 
 
+// create function that counts score and first one to get to 5 wins game
+// stop game after winner declared
+// button for restarting game  
 
+
+/*
 
 function game() {
-    for(let i = 0; i < 5; i ++) {
-        const playerSelection = prompt("Choose","rock, paper, scissors").toLowerCase()
+    for(let i = 0; i < 5; i++) {
+                
         const computerSelection = computerPlay()
 
         playRound (playerSelection, computerSelection)
@@ -67,29 +92,5 @@ function game() {
 }
 
 console.log(game())
-
-
-
-/* will come back to the code below after trying some new stuff
-
-let buttons = document.querySelectorAll("button");
-
-buttons.forEach((button)=>{
-    button.addEventListener("click", randomValueFromComputer)
-});
-
-const para = document.querySelector("P");
-
-function randomValueFromComputer () {
-    const computerChoice = Math.floor(Math.random()*3) +1;
-    
-    if (computerChoice === 1) {
-        para.textContent = "ROCK";
-    } else if (computerChoice === 2) {
-        para.textContent = "PAPER";
-    } else if (computerChoice === 3) {
-        para.textContent = "SCISSORS";
-    }
-}
 
 */
