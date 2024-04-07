@@ -1,38 +1,95 @@
+html{
+   background-color: black;
+}
+
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-
-
+   display: flex;
+   flex-direction: column;
+   min-height: 80vh;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   margin: 200px 100px;
 }  
 
+.scores {
+   display: flex;
+   justify-content: center;
+   height: 100px;
+   background-color: rgb(200, 200, 200);
+   
+}
+
+.scores  p {
+   font-size: 40px;
+   font-weight: bold;
+
+   align-items: center;
+   display: flex;
+   flex: 1;
+   height: 100%;
+   margin: 0;
+   padding-left: 60px;
+
+   
+}
+
 .playerButtons {
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
-    border: solid 1px red
- }
+   display: flex;
+   justify-content: center;
+   justify-content: space-around;
+   align-items: center;
+   flex: 1;
+   flex-wrap: wrap;
+   max-height:400px;
+   background-color: rgb(100, 100, 100);
+   
+}
 
- .display {
-    display: flex;
+button {
+   font-size: 44px;
+   color: white;
+   background-color: rgb(100, 100, 100);
+   border-radius: 10px;
+   border-color: white;
+   border-style: solid;
+   padding: 20px 60px;
+}
 
-    flex:1;
-    border: solid 1px red
 
- }
- .scores {
-    display: flex;
-    flex: 1;
- }
+.displayresult {
+   height: 100px;
+   background-color: rgb(200, 200, 200);
+   
 
- p {
-    width: 100px;
-    border: solid 1px red
+   display: flex;
+   align-items: center;  
+   justify-content: center;
 
- }
+   font-size:40px;
+   font-weight: bold;
+}
 
- button {
-    display: flex;
- }
+
+
+.display {
+   max-height: 200px;
+   
+   background-color: rgb(100, 100, 100);
+   
+   font-size: 20px;
+   font-weight: bold;
+   color: white;
+
+   display: flex;
+      
+   
+}
+
+.display p {
+   flex:auto;
+
+   margin: 0px;
+   padding: 2px;
+   padding-left: 60px;
+  
+
+}

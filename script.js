@@ -48,41 +48,41 @@ function getComputerChoice() {
 // Get game winner
 function getWinner(playerChoice, computerChoice) {
     if (playerChoice === "rock" && computerChoice === "rock") {
-        displayResult.textContent = "you tied! You both picked rock."
+        displayResult.textContent = "It's a tie! You both picked rock."
     } else if (playerChoice === "paper" && computerChoice === "paper") {
-        displayResult.textContent = "you tied! You both picked paper."
+        displayResult.textContent = "It's a tie! You both picked paper."
     } else if (playerChoice === "scissors" && computerChoice === "scissors") {
-        displayResult.textContent = "you tied! You both picked scissors."
+        displayResult.textContent = "It's a tie! You both picked scissors."
 
 
     }  else if (playerChoice === "rock" && computerChoice === "scissors") {
-        displayResult.textContent = "you win!";
+        displayResult.textContent = "You win!";
         ps += 1;
-        playerScore.textContent = "🐵";
+        playerScore.textContent += "🐵";
        
     } else if (playerChoice === "rock" && computerChoice === "paper") {
-        displayResult.textContent = "you loose!"
+        displayResult.textContent = "You loose!"
         cs += 1;
         computerScore.textContent += "🤖";
             
     } else if (playerChoice === "paper" && computerChoice === "rock") {
-        displayResult.textContent = "you win!"
+        displayResult.textContent = "You win!"
         ps += 1;
-        playerScore.textContent = "🐵";
+        playerScore.textContent += "🐵";
         
 
     } else if (playerChoice === "paper" && computerChoice === "scissors") {
-        displayResult.textContent = "you lose!"
+        displayResult.textContent = "You lose!"
         cs += 1;
         computerScore.textContent += "🤖";
     
     } else if (playerChoice === "scissors" && computerChoice === "paper") {
-        displayResult.textContent = "you win!"
+        displayResult.textContent = "You win!"
         ps += 1;
-        playerScore.textContent = "🐵";
+        playerScore.textContent += "🐵";
         
     } else if (playerChoice === "scissors" && computerChoice === "rock") {
-        displayResult.textContent = "you lose!"
+        displayResult.textContent = "You lose!"
         cs += 1;
         computerScore.textContent += "🤖";
     }
@@ -90,10 +90,17 @@ function getWinner(playerChoice, computerChoice) {
     winningMessage ()
 }
 
-function winningMessage (){
+
+
+let delayInMilliseconds = 600
+
+function winningMessage () {
+    setTimeout(function(){
     if (ps === 3) {
-        alert("YOU WIN! Refresh page to have another go!")
+        alert("YOU WON THE GAME! Refresh page to have another go!")
     } else if (cs === 3) {
-        alert ("YOU LOSE! Refresh page to have another go!")
+        alert ("YOU LOST THE GAME! Refresh page to have another go!")
     }
+}, delayInMilliseconds);
+
 }
