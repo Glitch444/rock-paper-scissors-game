@@ -10,11 +10,12 @@ let cs = 0;
 
 // begin game on click
 const playerButtons = document.querySelectorAll("#rock, #paper, #scissors");
-playerButtons.forEach(playerButtons => playerButtons.addEventListener("click", play));
+playerButtons.forEach( (b) => b.addEventListener("click", play));
 
 function play (e) {
     const playerChoice = e.target.id;
-    let computerChoice = getComputerChoice();
+    const computerChoice = getComputerChoice();
+
     addPara(playerChoice, computerChoice); 
     getWinner(playerChoice, computerChoice);
     
@@ -48,41 +49,41 @@ function getComputerChoice() {
 // Get game winner
 function getWinner(playerChoice, computerChoice) {
     if (playerChoice === "rock" && computerChoice === "rock") {
-        displayResult.textContent = "It's a tie! You both picked rock."
+        displayResult.textContent = "It's a tie!"
     } else if (playerChoice === "paper" && computerChoice === "paper") {
-        displayResult.textContent = "It's a tie! You both picked paper."
+        displayResult.textContent = "It's a tie!"
     } else if (playerChoice === "scissors" && computerChoice === "scissors") {
-        displayResult.textContent = "It's a tie! You both picked scissors."
+        displayResult.textContent = "It's a tie!"
 
 
     }  else if (playerChoice === "rock" && computerChoice === "scissors") {
-        displayResult.textContent = "You win!";
+        displayResult.textContent = "You won this round!";
         ps += 1;
         playerScore.textContent += "🐵";
        
     } else if (playerChoice === "rock" && computerChoice === "paper") {
-        displayResult.textContent = "You loose!"
+        displayResult.textContent = "You lost this round!"
         cs += 1;
         computerScore.textContent += "🤖";
             
     } else if (playerChoice === "paper" && computerChoice === "rock") {
-        displayResult.textContent = "You win!"
+        displayResult.textContent = "You won this round!"
         ps += 1;
         playerScore.textContent += "🐵";
         
 
     } else if (playerChoice === "paper" && computerChoice === "scissors") {
-        displayResult.textContent = "You lose!"
+        displayResult.textContent = "You lost this round!"
         cs += 1;
         computerScore.textContent += "🤖";
     
     } else if (playerChoice === "scissors" && computerChoice === "paper") {
-        displayResult.textContent = "You win!"
+        displayResult.textContent = "You won this round!"
         ps += 1;
         playerScore.textContent += "🐵";
         
     } else if (playerChoice === "scissors" && computerChoice === "rock") {
-        displayResult.textContent = "You lose!"
+        displayResult.textContent = "You lost this round!"
         cs += 1;
         computerScore.textContent += "🤖";
     }
