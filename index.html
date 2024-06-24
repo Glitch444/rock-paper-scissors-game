@@ -6,32 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROCK PAPER SCISSORS</title>
     <link rel="stylesheet" href="./style.css"> 
+    <script defer src="./script.js"></script> 
 </head>
 
 <body>
-    <div class="scores">
-        <p id="playerScore">Player: </p>
-        <p id="computerScore">Computer: </p>
-    </div>
 
-    <div class="playerButtons">
-        <button id="rock">👊 ROCK</button>
-        <button id="paper">🖐️ PAPER</button>
-        <button id="scissors">✌️SCISSORS</button>
-    </div>
-
-    <div class="displayresult">
-        <p id="displayResult">ROCK, PAPER, SCISSORS? </p>
-    </div>
-
-    <div class="display">
-        <p id="displayPlayerChoice"></p>
-        <p id="displayComputerChoice"></p>
-    </div>
-
-     
+    <h1>Rock - Paper - Scissors</h1>
 
    
-    <script src="./script.js" defer></script> 
+    <div class="player-buttons">
+        <button id="rock">👊</button>
+        <button id="paper">🖐️</button>
+        <button id="scissors">✌️</button>
+    </div>
+
+    <div class="display-choice">
+        <p id="display-player-choice">🐵 YOU:</p>
+        <p id="display-computer-choice">💻 COMPUTER:</p>
+    </div>
+
+    <div id="display-result"></div>
+
+    <div class="display-score">
+        <p>Player: <span id="display-player-score">0</span></p>
+        <p>Computer: <span id="display-computer-score">0</span></p>
+    </div>
+   
     </body>
 </html>

@@ -1,82 +1,74 @@
-html {
-   background-color: black;
-   display: flex;
-   justify-content: center;
-}
-
 body {
+   margin: 0;
+   font-family: arial, sans-serif;
+   font-weight: bold;
+   font-size: 24px;
+   background-color: #ecfeff;
+  
+
    display: flex;
    flex-direction: column;
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
-}  
-
-.scores {
-   display: flex;
-   justify-content: center;
-   background-color: rgb(200, 200, 200);
-   padding: 10px 0px;
+   align-items: center
 }
 
-.scores  p {
-   font-size: 24px;
-   font-weight: bold;
-   display: flex;
-   flex: 1;
-   margin: 0;
-   padding-left: 10px;   
+h1{
+   text-align: center;
 }
 
-.playerButtons {
+p {
+   margin: 12px;
+}
+
+.player-buttons {
    display: flex;
    justify-content: center;
    justify-content: space-around;
    align-items: center;
-   flex: 1;
    flex-wrap: wrap;
-   background-color: rgb(100, 100, 100);
 }
 
-button {
-   font-size: 24px;
-   color: white;
-   background-color: rgb(100, 100, 100);
-   border-radius: 10px;
-   border-color: white;
-   border-style: solid;
+.player-buttons button {
+   margin: 30px 20px;
    padding: 20px 50px;
-   margin: 5px;
+
+   min-width: 160px;  
+   background-color: #d1d5db;
+   border-radius: 250px;
+   border: 2px solid black;
+   font-size: 6rem;
+
+   transition: background-color 0.5s ease;
+}
+
+.player-buttons button:hover {
+   background-color: #6b7280;
 }
 
 
-.displayresult {
-   background-color: rgb(200, 200, 200);
-   display: flex;
-   align-items: center;  
-   justify-content: center;
-   flex: 1;
-   font-size: 24px;
+.display-choice p {
+   font-size: 2rem;
    font-weight: bold;
+}  
+
+
+#display-result {
+   font-size: 5rem;
+   margin: 30px 0;
 }
 
-#displayResult {
-   margin: 10px;
+
+
+
+.display-score {
+   font-size: 2rem;
 }
 
-.display {
-   background-color: rgb(100, 100, 100);
-   font-size: 18px;
-   font-weight: bold;
-   color: white;
-   display: flex;
-   
-   
-   
+
+.greenText, #display-player-score {
+   color: hsl(130,85%,54%);
 }
 
-.display p {
-   flex:1;
-   margin: 0px;
-   padding: 5px
-    
+.redText, #display-computer-score {
+   color: hsl(0,84%,60%);
 
 }
